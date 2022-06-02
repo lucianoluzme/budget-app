@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.clearflix::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+body{
+    color: #555;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    position: relative;
+    height: 100vh;
+    font-weight: 400;
+}
+
+.right{
+    float: right;
+}
+
+.red{
+    color: tomato;
+}
+
+.red-focus:focus{
+    color: crimson;
+    border: 1px solid #ff5049;
+}
+
+.top{
+    height: 40vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.453), rgba(0,0,0,0.35)), url('images/back.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.budget{
+    position: absolute;
+    width: 350px;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%,-50%);
+    color: #fff;
+}
+
+.budget-title{
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: 300;
+}
+
+.budget-value{
+    font-weight: 300;
+    font-size: 46px;
+    text-align: center;
+    margin-bottom: 25px;
+    letter-spacing: 2px;
+}
