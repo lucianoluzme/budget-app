@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="resources/images/fav-icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="resources/style.css">
+    <title>Budget</title>
+</head>
+<body>
+    <div class="container top">
+        <div class="budget">
+            <div class="budget-tittle">
+                Disponível in <span class="budget-title-month">%Month%</span>
+            </div>
+
+            <div class="budget-value">+ 2.456,89</div>
+
+            <div class="budget-income clearflix">
+                <div class="budget-income-text">Income</div>
+                <div class="right">
+                    <div class="budget-income-value">+ 4.520,00</div>
+                    <div class="budget-income-percentage">&nbsp</div>
+                </div>
+            </div>
+
+            <div class="budget-expenses clearflix">
+                <div class="budget-expenses">Expenses</div>
+                <div class="right clearflix">
+                    <div class="budget-expenses-value">-1.980,50</div>
+                    <div class="budget-expenses-percentage">45%</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-bottom">
+        <div class="add">
+            <div class="add-container">
+                <select class="add-type" name="" id="">
+                    <option value="inc" selected>Receitas</option>
+                    <option value="exp">Despesas</option>
+                </select>
+                <input type="text" class="add-description" placeholder="Descrição">
+                <input type="number"  class="add-value" placeholder="Valor">
+                <button class="add-btn"><i class='bx bxs-save'></i></button>
+            </div>
+        </div>
+
+        <div class="container clearflix">
+            <div class="income">
+                <h2 class="income-title">Receitas</h2>
+
+                <div class="income-list"></div>
+            </div>
+
+            <div class="expenses">
+                <h2 class="expenses-title">Despesas</h2>
+                <div class="expenses-list"></div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <script src="resources/app.js"></script>
+</body>
+</html>
