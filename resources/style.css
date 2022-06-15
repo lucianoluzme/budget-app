@@ -1,9 +1,67 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
+:root{
+    --border-red: 1px solid red;
+    --border-gray: 1px solid rgb(225, 225, 225);
+    --border-gray-alt: 1px solid rgb(235, 235, 235);
+
+    --body-color-first:rgba(239, 239, 239, 0.845);
+    --body-color-alt:rgb(234, 234, 234);
+
+    --income-first-color:rgb(10, 122, 227,0.785);
+    --income-second-color:rgb(89, 160, 226);
+
+    --expense-first-color:rgba(132, 15, 2, 0.785);
+    --expense-second-color:rgb(242, 200, 148);
+}
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
+}
+
+[type='text'], [type='number']{
+    border:var(--border-gray);
+    border-radius: 5px;
+    padding: 0.2rem;
+    height: 2.2rem;
+}
+ 
+
+select{
+    border: var(--border-gray);
+    border-radius: 5px;
+    height: 2.2rem;
+    padding: 0.2rem;
+}
+
+h2{
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+
+.add-btn{
+    height: 2.2rem;
+    width: 2.2rem;
+    border: none;
+    border-radius: 5px;
+    color: rgb(27, 226, 159);
+    transition: .5s;
+    cursor: pointer;
+    align-items: center;
+}
+
+.add-btn:hover{
+    background-color: rgb(5, 255, 172); 
+    color: rgb(232, 232, 232);
+}
+
+i{
+    font-size: 1.9rem;
 }
 
 .clearflix::after{
@@ -19,19 +77,22 @@ body{
     position: relative;
     height: 100vh;
     font-weight: 400;
+    background-color: var(--body-color-first);
 }
 
 .right{
     float: right;
+    width: auto;
+    display: flex;
+
 }
 
 .red{
-    color: tomato;
+    color: rgb(156, 31, 9);
 }
 
-.red-focus:focus{
-    color: crimson;
-    border: 1px solid #ff5049;
+.red-focus{
+    border: 1px solid rgba(115, 17, 0, 0.683) !important;
 }
 
 .top{
@@ -44,7 +105,7 @@ body{
 
 .budget{
     position: absolute;
-    width: 350px;
+    width: auto;
     top: 50%;
     left: 50%;
     text-align: center;
@@ -65,4 +126,145 @@ body{
     text-align: center;
     margin-bottom: 25px;
     letter-spacing: 2px;
+
+}
+.budget-income{
+    background-color:var(--income-first-color);
+}
+
+.budget-expenses{
+    background-color: var(--expense-first-color);
+}
+.budget-income, .budget-expenses{
+    display: flex;
+    column-gap:1rem;
+    height: 40px;
+    align-items: center;
+    padding: 1rem 2rem;
+    margin: 0.2rem;
+}
+
+.budget-expenses>.right, .budget-income >.right{
+    display: flex;
+    align-items: center;
+}
+
+.budget-expenses-percentage{
+    margin-left: 0.9rem;
+    font-size: 10px;  
+    background-color: #d60a03;
+    padding: 0.1rem;
+    border-radius: 3px;
+}
+
+/**/
+
+.add-container{
+    display: flex;
+    justify-content: center;
+    column-gap: 0.5rem;
+    padding: 0.5rem;
+    background-color: var(--body-color-first);
+    height: 50px;
+}
+
+/* Container List*/
+.container-items{
+    width: auto;
+    margin: 2.5rem 2rem;
+    display: flex;
+    column-gap: 0.9rem;
+}
+
+.income{
+    float: left;
+    width: 50%;
+}
+
+.expenses{
+    float: right;
+    width: 50%;
+}
+
+.income-title{
+    color: rgb(4, 126, 126);
+}
+
+.expenses-title{
+    color: tomato;
+}
+
+.item{
+    padding: 0.5rem;
+    border-bottom: var(--border-gray);
+    height: 3rem;
+}
+
+.item:first-child{
+    border-top: var(--border-gray);
+}
+
+.item:nth-child(even){
+    border-bottom: var(--border-gray-alt);
+    background-color: var(--body-color-alt);
+}
+
+.item-description{
+    float: left;
+}
+
+.item-value{
+    float: left;
+    transition: transform 0.3s;
+}
+
+.item-percentage{
+    float: left;
+    margin-left: 0.2rem;
+    transition: transform 0.3s;
+    font-size: .8rem;
+    background-color: rgb(159, 9, 39);
+    padding: 0.1rem;
+    border-radius: 3px;
+    width: 2rem;
+    text-align: center;
+    align-items: center;
+    color: var(--body-color-alt);
+}
+.item-delete-btn{
+    font-size: .5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+    display: none;
+}
+
+.income .item-value,
+.income .item-delete-btn{
+    color:#28b9b5;
+}
+
+.expenses .item-value,
+.expenses .item-delete-btn{
+    color:rgb(109, 0, 22);
+}
+
+
+
+.item-delete-btn:focus{
+    outline: none;
+}
+.item-delete-btn:active{
+    transform: translateY(2px);
+}
+.item:hover .item-delete-btn{
+  display: block;
+}
+.item:hover .item-value{
+    transform: translateX(-20px);
+}
+.item:hover .item-percentage{
+    transform: translateX(-20px);
 }
